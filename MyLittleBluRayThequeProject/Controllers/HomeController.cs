@@ -24,11 +24,14 @@ namespace MyLittleBluRayThequeProject.Controllers
             return View(model);
         }
 
-        public IActionResult SelectedBluRay([FromRoute]long idBr)
+        public IActionResult SelectedBluRay(long? id)
         {
             IndexViewModel model = new IndexViewModel();
             model.BluRays = brRepository.GetListeBluRay();
-            model.SelectedBluRay = model.BluRays.FirstOrDefault(x => x.Id == idBr);
+            if(id != null)
+            {
+                model.SelectedBluRay = model.BluRays.FirstOrDefault(x => x.Id == id);
+            }
             return View(model);
         }
 
@@ -41,6 +44,11 @@ namespace MyLittleBluRayThequeProject.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public void OnPost()
+        {
+            var nom = Request.Form["Nom"];
+            Console.WriteLine("Réussi ! "+ nom);
         }
     }
 }

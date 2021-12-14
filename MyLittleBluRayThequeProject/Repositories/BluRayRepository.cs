@@ -1,30 +1,37 @@
 ﻿using MyLittleBluRayThequeProject.DTOs;
+using MyLittleBluRayThequeProject.Entity;
 
 namespace MyLittleBluRayThequeProject.Repositories
 {
     public class BluRayRepository
     {
+
         /// <summary>
         /// Consctructeur par défaut
         /// </summary>
         public BluRayRepository()
         {
-
         }
 
-        public List<BluRay> GetListeBluRay()
+        /*
+        public BluRay Get(){
+            return context.GetDbSet<BluRay>().FirstOrDefault();
+
+        }*/
+
+        public List<BluRayDto> GetListeBluRay()
         {
-            return new List<BluRay>
+            return new List<BluRayDto>
             { 
-                new BluRay
+                new BluRayDto
                 {
                     Id = 0,
                     Titre = "My Little film 1",
                     DateSortie = DateTime.Now,
                     Version = "Courte",
-                    Acteurs = new List<Personne>
+                    Acteurs = new List<PersonneDto>
                     {
-                        new Personne
+                        new PersonneDto
                         {
                             Id = 0,
                             Nom = "Per",
@@ -35,15 +42,15 @@ namespace MyLittleBluRayThequeProject.Repositories
                         }
                     }
                 },
-                new BluRay
+                new BluRayDto
                 {
                     Id = 1,
                     Titre = "My Little film 2",
                     DateSortie = DateTime.Now,
                     Version = "Longue",
-                    Acteurs = new List<Personne>
+                    Acteurs = new List<PersonneDto>
                     {
-                        new Personne
+                        new PersonneDto
                         {
                             Id = 0,
                             Nom = "Per",

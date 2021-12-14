@@ -3,7 +3,7 @@
     /// <summary>
     /// Dto d'un Disque Blu-Ray
     /// </summary>
-    public class BluRay
+    public class BluRayDto
     {
         /// <summary>
         /// Identifiant technique
@@ -18,17 +18,17 @@
         /// <summary>
         /// Le scénariste du film
         /// </summary>
-        public Personne Scenariste  { get; set; }
+        public PersonneDto Scenariste  { get; set; }
 
         /// <summary>
         /// Le réalisateur du film
         /// </summary>
-        public Personne Realisateur { get; set; }
+        public PersonneDto Realisateur { get; set; }
 
         /// <summary>
         /// Les acteurs du film
         /// </summary>
-        public List<Personne> Acteurs { get; set; }
+        public List<PersonneDto> Acteurs { get; set; }
 
         /// <summary>
         /// Durée du film

@@ -4,8 +4,8 @@ namespace MyLittleBluRayThequeProject.Models
 {
     public class IndexViewModel
     {
-        public List<BluRay> BluRays { get; set; }
+        public List<BluRayDto> BluRays { get; set; }
 
-        public BluRay SelectedBluRay { get; set; }
+        public BluRayDto SelectedBluRay { get; set; }
     }
 }

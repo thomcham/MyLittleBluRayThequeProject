@@ -1,6 +1,6 @@
 ﻿namespace MyLittleBluRayThequeProject.DTOs
 {
-    public class Personne
+    public class PersonneDto
     {
         /// <summary>
         /// Identifiant technique
