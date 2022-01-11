@@ -1,23 +1,25 @@
 ﻿using MyLittleBluRayThequeProject.DTOs;
 using MyLittleBluRayThequeProject.Entity;
+using MyLittleBluRayThequeProject.Helpers;
 
 namespace MyLittleBluRayThequeProject.Repositories
 {
-    public class BluRayRepository
+    public class BluRayRepository : IBluRayRepository
     {
 
+        readonly ApplicationContext context;
         /// <summary>
         /// Consctructeur par défaut
         /// </summary>
-        public BluRayRepository()
+        public BluRayRepository(ApplicationContext context)
         {
+            this.context = context;
         }
 
-        /*
         public BluRay Get(){
             return context.GetDbSet<BluRay>().FirstOrDefault();
 
-        }*/
+        }
 
         public List<BluRayDto> GetListeBluRay()
         {

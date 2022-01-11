@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using MyLittleBluRayThequeProject.Models;
 using MyLittleBluRayThequeProject.Repositories;
 using System.Diagnostics;
@@ -8,13 +9,15 @@ namespace MyLittleBluRayThequeProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMapper mapper;
 
-        private readonly BluRayRepository brRepository;
+        private readonly IBluRayRepository brRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBluRayRepository brRepository, IMapper mapper)
         {
             _logger = logger;
-            brRepository = new BluRayRepository();
+            this.mapper = mapper;
+            this.brRepository = brRepository;
         }
 
         public IActionResult Index()
